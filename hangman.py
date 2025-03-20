@@ -7,14 +7,14 @@ def getFeladvany():
     
     while hibapontok < 13:
         tipp = input("Mi a tipped?").upper()
-        if not tipp:
+        if not tipp or not tipp.isalpha():
             print("Próbáld újra")
             continue
         
         if tipp in feladvany:
             talalatok.add(tipp)
             rejtveny = get_rejtveny(feladvany, talalatok)
-            print(f'Jó tipp! {rejtveny}')
+            print(f'Jó tipp!\n{rejtveny}')
             if rejtveny == feladvany:
                 print("Győztél!")
                 return
